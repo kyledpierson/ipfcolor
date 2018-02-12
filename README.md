@@ -3,10 +3,7 @@ This repo contains a python implementation of the function [generateIPFColor](ht
 This is not a wrapper for the original code; it is written in pure python.
 
 ### Requirements
-* Python 3 (Get it [here](https://www.python.org/downloads/) or create virtual environment in Anaconda using the following command)
-```
-$ conda create -n py36 python=3.6 anaconda
-```
+* Python 3 (Get it [here](https://www.python.org/downloads/) or create virtual environment in Anaconda using `conda create -n py36 python=3.6 anaconda`)
 * Numpy `$ pip install numpy`
 
 ### Running the code
@@ -20,26 +17,26 @@ from ipfcolor import Generator
 generator = Generator()
 
 rgb = generator.generate_ipf_color(
-    phi1:       Union[float, list], # either a list of euler angles, or the first euler angle
-    ref_dir_0:  Union[float, list], # either a list of ref_dir, or the first ref_dir
-    deg_to_rad: bool,               # true if the euler angles are given in degrees, false if radians
-    phi:        float,              # not required if phi1 is a list
-    phi2:       float,              # not required if phi1 is a list
-    ref_dir_1:  float,              # not required if ref_dir_0 is a list
-    ref_dir_2:  float)              # not required if ref_dir_0 is a list
+      phi1:       Union[float, list], # either a list of euler angles, or the first euler angle
+      ref_dir_0:  Union[float, list], # either a list of ref_dir, or the first ref_dir
+      deg_to_rad: bool,               # true if the euler angles are given in degrees, false if radians
+      phi:        float,              # not required if phi1 is a list
+      phi2:       float,              # not required if phi1 is a list
+      ref_dir_1:  float,              # not required if ref_dir_0 is a list
+      ref_dir_2:  float)              # not required if ref_dir_0 is a list
 ```
 
-To avoid confusion, it might be best to simply use named parameters
+To avoid confusion, you might just want to use named parameters
 
 ```
 rgb = generator.generate_ipf_color(
-    phi1 = ...
-    phi = ...
-    phi2 = ...
-    ref_dir_0 = ...
-    ref_dir_1 = ...
-    ref_dir_2 = ...
-    deg_to_rad = ...
+      phi1 = ...
+      phi = ...
+      phi2 = ...
+      ref_dir_0 = ...
+      ref_dir_1 = ...
+      ref_dir_2 = ...
+      deg_to_rad = ...
 ```
 
 Run the tests using `python3 -m pytest`
