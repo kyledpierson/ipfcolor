@@ -1,6 +1,10 @@
-.cache/
-__pycache__/
-.pytest_cache/
-
-*.pyc
 .idea/
+build/
+dist/
+ipfcolor.egg-info/
+
+ipcolor/.cache/
+ipcolor/__pycache__/
+ipcolor/.pytest_cache/
+
+ipcolor/*.pyc

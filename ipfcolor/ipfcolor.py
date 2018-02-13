@@ -2,8 +2,8 @@ import numpy as np
 from typing import Union
 from math import pi, acos, atan2, sqrt
 
-from quaternion import Quaternion
-from orientation import eu2qu, qu2om, om2gmatrix
+from .quaternion import Quaternion
+from .orientation import eu2qu, qu2om, om2gmatrix
 
 # GLOBAL CONSTANTS
 get_has_inversion = True
@@ -37,7 +37,7 @@ class Generator:
         return ((a & 0xff) << 24) | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff)
 
     def generate_ipf_color(self, phi1: Union[float, list], ref_dir_0: Union[float, list], deg_to_rad: bool,
-                           phi: float = 0, phi2: float = 0, ref_dir_1: float = 0, ref_dir_2: float = 0) -> int:
+                           phi: float = 0, phi2: float = 0, ref_dir_1: float = 0, ref_dir_2: float = 0) -> list:
         if isinstance(phi1, list) and len(phi1) == 3:
             phi = phi1[1]
             phi2 = phi1[2]
@@ -106,4 +106,5 @@ class Generator:
         for i, element in enumerate(rgb):
             rgb[i] = 255 * element / max_val
 
-        return Generator.drgb(255, rgb)
+        return rgb
+        # return Generator.drgb(255, rgb)
