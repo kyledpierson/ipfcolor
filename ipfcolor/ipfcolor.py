@@ -104,7 +104,7 @@ class Generator:
 
         max_val = max(rgb[0], rgb[1], rgb[2])
         for i, element in enumerate(rgb):
-            rgb[i] = 255 * element / max_val
+            rgb[i] = int(round(255 * element / max_val))
 
         return rgb
         # return Generator.drgb(255, rgb)
